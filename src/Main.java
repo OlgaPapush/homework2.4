@@ -1,7 +1,6 @@
 import Transport.Bus;
-import Transport.cars;
-import Transport.trucks;
-
+import Transport.Cars;
+import Transport.Trucks;
 public class Main {
     public static void main(String[] args) {
         Bus bus1 = new Bus("Hyundai", "H350", 3.0);
@@ -12,16 +11,16 @@ public class Main {
         System.out.println(bus2.toString());
         System.out.println(bus3.toString());
         System.out.println(bus4.toString());
-       bus1.startMoving();
-       bus1.finishtMoving();
-       bus1.pitStop();
-       bus1.bestLapTime();
-       bus1.maximumSpeed();
+        bus1.startMoving();
+        bus1.finishtMoving();
+        bus1.pitStop();
+        bus1.bestLapTime();
+        bus1.maximumSpeed();
 
-       cars car1 = new cars("Audi","50L TDI",3.0);
-       cars car2 = new cars("BMW","Z8", 3.0);
-       cars car3 = new cars("Kia","Sportage", 3.0);
-       cars car4 = new cars("Hundai","Avante",3.5);
+        Cars car1 = new Cars("Audi", "50L TDI", 3.0);
+        Cars car2 = new Cars("BMW", "Z8", 3.0);
+        Cars car3 = new Cars("Kia", "Sportage", 3.0);
+        Cars car4 = new Cars("Hundai", "Avante", 3.5);
         System.out.println(car1.toString());
         System.out.println(car2.toString());
         System.out.println(car3.toString());
@@ -32,12 +31,10 @@ public class Main {
         car1.bestLapTime();
         car1.maximumSpeed();
 
-
-
-        trucks truck1 = new trucks("Валдай", "NEXT", 5.2);
-        trucks truck2 = new trucks("Dongfeng Captain", "T", 5.5);
-        trucks truck3 = new trucks("Газель", "N", 5.0);
-        trucks truck4 = new trucks("JAC", "N-35", 5.7);
+        Trucks truck1 = new Trucks("Валдай", "NEXT", 5.2);
+        Trucks truck2 = new Trucks("Dongfeng Captain", "T", 5.5);
+        Trucks truck3 = new Trucks("Газель", "N", 5.0);
+        Trucks truck4 = new Trucks("JAC", "N-35", 5.7);
         System.out.println(truck1.toString());
         System.out.println(truck2.toString());
         System.out.println(truck3.toString());
@@ -48,19 +45,15 @@ public class Main {
         truck1.bestLapTime();
         truck1.maximumSpeed();
 
-       Driver serega = new Driver("Серега", "D", 2.5, bus1);
-       Driver2 albert = new Driver2("Альберт", "C", 4,truck2);
-       Driver3 ivan = new Driver3("Иван", "B", 5, car3);
+        DriverD serega = new DriverD("Серега", "D", 2.5, bus1);
+        DriverC albert = new DriverC("Альберт", "C", 4, truck2);
+        DriverB ivan = new DriverB("Иван", "B", 5, car1);
 
         System.out.println(serega);
         serega.inform();
-
         System.out.println(albert);
         albert.inform();
-
         System.out.println(ivan);
         ivan.inform();
-
-
     }
 }

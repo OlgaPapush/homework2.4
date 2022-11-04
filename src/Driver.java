@@ -1,76 +1,60 @@
-
 import Transport.Competing;
 import Transport.Transport;
-
-
-public class Driver <D extends Transport & Competing>  {
-
+public abstract class Driver<T extends Transport & Competing> {
     private String name;
     private String drivingLicense;
     private double experience;
-    private D bus;
+    private T car;
 
-    public Driver(String name, String drivingLicense, double experience, D bus) {
+    public Driver(String name, String drivingLicense, double experience, T car) {
         this.name = name;
         this.drivingLicense = drivingLicense;
         this.experience = experience;
-        this.bus = bus;
+        this.car = car;
     }
-
-    public D getBus() {
-        return bus;
+    public T getCar() {
+        return car;
     }
-
-    public void setBus(D bus) {
-        this.bus = bus;
+    public void setCar(T car) {
+        this.car = car;
     }
-
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
     public String getDrivingLicense() {
         return drivingLicense;
     }
-
     public void setDrivingLicense(String drivingLicense) {
         this.drivingLicense = drivingLicense;
     }
-
     public double getExperience() {
         return experience;
     }
-
     public void setExperience(double experience) {
         this.experience = experience;
     }
-
     public void startMoving() {
-        System.out.println(name  + " заводит автобус " + bus.getBrand() + " " + bus.getModel());
+        System.out.println(name + " заводит " + car.getBrand() + " " + car.getModel());
     }
-    public void finishTheMove(){
-        System.out.println(name + " глушит автобус " + bus.getBrand() + " " + bus.getModel());
+    public void finishTheMove() {
+        System.out.println(name + " глушит  " + car.getBrand() + " " + car.getModel());
     }
-    public void refuelTheCar(){
-        System.out.println(" Пора заправить мою ласточку! " + bus.getBrand() + " " + bus.getModel());
-    }
-
-    @Override
+    public void refuelTheCar() {
+        System.out.println(" Пора заправить мою ласточку! " + car.getBrand() + " " + car.getModel());
+    }    @Override
     public String toString() {
         return "Driver{" +
                 "name='" + name + '\'' +
                 ", drivingLicense='" + drivingLicense + '\'' +
                 ", experience=" + experience +
-                ", bus=" + bus +
+                ", cars=" + car +
                 '}';
     }
-
-    public void inform(){
-        System.out.println("Водитель " + name + "управляет автомобилем " + bus.getBrand() + " " + bus.getModel() + " и будет участвовать в зезде");
+    public void inform() {
+        System.out.println("Водитель " + name + "управляет автомобилем " + car.getBrand() + " " + car.getModel() + " и будет участвовать в зезде");
         startMoving();
         finishTheMove();
         refuelTheCar();
