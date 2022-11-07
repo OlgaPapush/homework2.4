@@ -1,9 +1,20 @@
 package Transport;
 
 public class Cars extends Transport implements Competing {
-    public Cars(String brand, String model, double engineVolume) {
+    private BodyType bodyType;
+
+    public Cars(String brand, String model, double engineVolume, BodyType bodyType) {
         super(brand, model, engineVolume);
+        this.bodyType = bodyType;    }
+
+    public BodyType getBodyType() {
+        return bodyType;
     }
+
+    public void setBodyType(BodyType bodyType) {
+        this.bodyType = bodyType;
+    }
+
     @Override
     public void startMoving() {
         System.out.println("Сядь в автомобиль, пристегнись ремнем безопасности");
@@ -23,6 +34,7 @@ public class Cars extends Transport implements Competing {
                 " brand='" + getBrand() + ", " +
                 " model=" + getModel() + ", " +
                 " engineVolume" + getEngineVolume() + ", " +
+                " bodyType " + getBodyType() +
                 '}';
     }
     @Override
