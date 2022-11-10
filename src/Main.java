@@ -1,7 +1,7 @@
 import Transport.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws WrongLoginException, WrongPasswordException, WrongDriverException {
         Bus bus1 = new Bus("Hyundai", "H350", 3.0, CapacityType.MEDIUM);
         Bus bus2 = new Bus("ЛиАЗ", "4292", 3.0, CapacityType.LARGE);
         Bus bus3 = new Bus("СитиРитм", "10", 3.5, CapacityType.SMALL);
@@ -15,6 +15,7 @@ public class Main {
         bus1.pitStop();
         bus1.bestLapTime();
         bus1.maximumSpeed();
+        bus1.getDiagnosed();
 
         Cars car1 = new Cars("Audi", "50L TDI", 3.0, BodyType.PICKUP);
         Cars car2 = new Cars("BMW", "Z8", 3.0, BodyType.SEDAN);
@@ -29,6 +30,7 @@ public class Main {
         car1.pitStop();
         car1.bestLapTime();
         car1.maximumSpeed();
+        car2.getDiagnosed();
 
         Trucks truck1 = new Trucks("Валдай", "NEXT", 5.2, LiftingCapacityType.N1);
         Trucks truck2 = new Trucks("Dongfeng Captain", "T", 5.5, LiftingCapacityType.N2);
@@ -43,6 +45,7 @@ public class Main {
         truck1.pitStop();
         truck1.bestLapTime();
         truck1.maximumSpeed();
+        truck1.getDiagnosed();
 
         DriverD serega = new DriverD("Серега", "D", 2.5, bus1);
         DriverC albert = new DriverC("Альберт", "C", 4, truck2);
@@ -54,5 +57,10 @@ public class Main {
         albert.inform();
         System.out.println(ivan);
         ivan.inform();
+
+        Data pas = new Data("MY_cat_IS_vary_fat33", "123adc_", "123adc_");
+        Data.checRegistration(pas);
+
+
     }
 }

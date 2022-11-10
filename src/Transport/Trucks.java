@@ -31,6 +31,11 @@ public class Trucks extends Transport implements Competing {
     }
 
     @Override
+    public boolean getDiagnosed() {
+        return Math.random() > 0.5;
+    }
+
+    @Override
     public String toString() {
         return "trucks{" +
                 "brand='" + getBrand() + ", " +

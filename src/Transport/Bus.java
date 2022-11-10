@@ -32,6 +32,12 @@ public class Bus extends Transport implements Competing {
     }
 
     @Override
+    public boolean getDiagnosed() {
+        System.out.println("Диагностика не нужна");
+        return false;
+    }
+
+    @Override
     public String toString() {
         return "Bus{" +
                 "brand='" + getBrand() + ", " +

@@ -5,7 +5,8 @@ public class Cars extends Transport implements Competing {
 
     public Cars(String brand, String model, double engineVolume, BodyType bodyType) {
         super(brand, model, engineVolume);
-        this.bodyType = bodyType;    }
+        this.bodyType = bodyType;
+    }
 
     public BodyType getBodyType() {
         return bodyType;
@@ -28,6 +29,12 @@ public class Cars extends Transport implements Competing {
         System.out.println("Поверни ключ зажигания и заглуши мотор автомобиля");
         System.out.println("Покинь автомобиль");
     }
+
+    @Override
+    public boolean getDiagnosed() {
+        return Math.random() > 0.5;
+    }
+
     @Override
     public String toString() {
         return " cars{" +
@@ -37,14 +44,17 @@ public class Cars extends Transport implements Competing {
                 " bodyType " + getBodyType() +
                 '}';
     }
+
     @Override
     public void pitStop() {
         System.out.println("Приятель! Пора сменить колесо автомобиля!");
     }
+
     @Override
     public void bestLapTime() {
         System.out.println("Лучшее время круга в гонке легковых автомобилей:");
     }
+
     @Override
     public void maximumSpeed() {
         System.out.println("Максимальная скорость автомобиля составляет");
